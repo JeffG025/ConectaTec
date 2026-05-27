@@ -109,18 +109,6 @@ public class GruposRepositoryImpl implements GruposRepository {
         lista.add(new Grupo(1, "Programación Móvil 6A", "Programación Móvil", 18, "01/02/2026", "TC-9X4P", true));
         lista.add(new Grupo(2, "Bases de Datos 4B",     "Bases de Datos",     16, "15/01/2026", "TC-K3M2", true));
         lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
-        lista.add(new Grupo(3, "Cálculo Integral 2A",   "Cálculo Integral",   13, "20/01/2026", "TC-7Z8R", true));
         return lista;
     }
 }
