@@ -40,8 +40,7 @@ public class AjustesFragment extends Fragment {
         EntradaAnimator.animar(
                 binding.headerAjustes,
                 binding.cardTema,
-                binding.cardNotificaciones,
-                binding.cardGeneral
+                binding.cardNotificaciones
         );
     }
 
