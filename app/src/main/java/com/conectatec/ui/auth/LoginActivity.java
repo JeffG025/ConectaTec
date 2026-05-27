@@ -14,6 +14,7 @@ import com.conectatec.databinding.ActivityLoginBinding;
 import com.conectatec.ui.admin.MainAdminActivity;
 import com.conectatec.ui.common.UiState;
 import com.conectatec.ui.docente.MainDocenteActivity;
+import com.conectatec.ui.estudiante.MainEstudianteActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -87,6 +88,11 @@ public class LoginActivity extends AppCompatActivity {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
 
+        binding.btnLoginEstudiante.setOnClickListener(v -> {
+            startActivity(new Intent(this, MainEstudianteActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
+
         // ── Registro ─────────────────────────────────────────────────────
         binding.tvIrRegistro.setOnClickListener(v -> {
             startActivity(new Intent(this, RegistroActivity.class));
@@ -98,18 +104,21 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent;
         switch (rol) {
             case "ADMIN":
+            case "ADMINISTRADOR":
                 intent = new Intent(this, MainAdminActivity.class);
                 break;
             case "DOCENTE":
                 intent = new Intent(this, MainDocenteActivity.class);
                 break;
+            case "ESTUDIANTE":
+                intent = new Intent(this, MainEstudianteActivity.class);
+                break;
             case "PENDIENTE":
                 intent = new Intent(this, WaitingApprovalActivity.class);
                 break;
             default:
-                // ESTUDIANTE: módulo no implementado aún
                 Snackbar.make(binding.getRoot(),
-                        getString(R.string.modulo_estudiante_proximamente), Snackbar.LENGTH_LONG).show();
+                        "Rol no reconocido: " + rol, Snackbar.LENGTH_LONG).show();
                 return;
         }
         startActivity(intent);

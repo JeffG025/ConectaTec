@@ -308,4 +308,38 @@
     <string name="error_dominio_invalido">Solo se permiten cuentas institucionales</string>
     <string name="error_google_signin">No se pudo iniciar sesión con Google</string>
     <string name="modulo_estudiante_proximamente">Módulo de estudiante próximamente</string>
+
+    <!-- ───────────────────────── Modulo Estudiante ───────────────────────── -->
+    <!-- Tabs de la pill nav -->
+    <string name="title_estudiante_dashboard">Inicio</string>
+    <string name="title_estudiante_grupos">Grupos</string>
+    <string name="title_estudiante_tareas">Tareas</string>
+    <string name="title_estudiante_chat">Chat</string>
+    <string name="title_estudiante_perfil">Mi perfil</string>
+    <!-- Content descriptions de los iconos de la pill nav -->
+    <string name="cd_nav_estudiante_dashboard">Inicio</string>
+    <string name="cd_nav_estudiante_grupos">Grupos</string>
+    <string name="cd_nav_estudiante_tareas">Tareas</string>
+    <string name="cd_nav_estudiante_chat">Chat</string>
+    <string name="cd_nav_estudiante_perfil">Perfil</string>
+    <!-- Subtítulos -->
+    <string name="subtitle_estudiante_dashboard">Bienvenido</string>
+    <string name="subtitle_estudiante_grupos">Mis grupos académicos</string>
+    <string name="subtitle_estudiante_tareas">Mis pendientes</string>
+    <string name="subtitle_estudiante_chat">Conversaciones</string>
+    <!-- Acciones -->
+    <string name="btn_unirse_grupo">Unirme a un grupo</string>
+    <string name="btn_escanear_qr">Escanear QR</string>
+    <string name="hint_codigo_invitacion">Código de invitación</string>
+    <string name="btn_entregar_tarea">Entregar</string>
+    <!-- Tabs / chips de filtrado de tareas -->
+    <string name="chip_tareas_pendientes">Pendientes</string>
+    <string name="chip_tareas_entregadas">Entregadas</string>
+    <string name="chip_tareas_calificadas">Calificadas</string>
+    <string name="chip_tareas_vencidas">Vencidas</string>
+    <!-- Mensajes de estado -->
+    <string name="msg_sin_grupos_estudiante">Aún no perteneces a ningún grupo</string>
+    <string name="msg_sin_tareas_estudiante">No tienes tareas en esta categoría</string>
+    <!-- Login DEMO -->
+    <string name="btn_login_demo_estudiante">Estudiante</string>
 </resources>

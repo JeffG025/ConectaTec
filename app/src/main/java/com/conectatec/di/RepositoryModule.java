@@ -6,6 +6,8 @@ import com.conectatec.data.repository.ChatRepository;
 import com.conectatec.data.repository.ChatRepositoryImpl;
 import com.conectatec.data.repository.DashboardRepository;
 import com.conectatec.data.repository.DashboardRepositoryImpl;
+import com.conectatec.data.repository.EstudianteRepository;
+import com.conectatec.data.repository.EstudianteRepositoryImpl;
 import com.conectatec.data.repository.GruposRepository;
 import com.conectatec.data.repository.GruposRepositoryImpl;
 import com.conectatec.data.repository.TareasRepository;
@@ -36,4 +38,7 @@ public abstract class RepositoryModule {
 
     @Binds @Singleton
     abstract AuthRepository bindAuthRepository(AuthRepositoryImpl impl);
+
+    @Binds @Singleton
+    abstract EstudianteRepository bindEstudianteRepository(EstudianteRepositoryImpl impl);
 }

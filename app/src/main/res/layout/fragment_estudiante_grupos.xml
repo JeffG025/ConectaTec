@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="48dp"
+    tools:context=".ui.estudiante.grupos.EstudianteGruposFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/title_estudiante_grupos"
+        android:textColor="@color/colorOnSurface"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle_estudiante_grupos"
+        android:textColor="@color/colorOnSurfaceVariant"
+        android:textSize="13sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUnirseGrupo"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_unirse_grupo"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_plus"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconTint="@color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGruposEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp" />
+
+    <TextView
+        android:id="@+id/tvSinGruposEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="@string/msg_sin_grupos_estudiante"
+        android:textColor="@color/colorOnSurfaceVariant"
+        android:textSize="14sp"
+        android:visibility="gone" />
+</LinearLayout>

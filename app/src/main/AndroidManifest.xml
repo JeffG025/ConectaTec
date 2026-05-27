@@ -51,6 +51,12 @@
             -->
         </activity>
 
+        <!-- TODO: quitar el intent-filter de MainEstudianteActivity cuando el login enrute por rol -->
+        <activity
+            android:name=".ui.estudiante.MainEstudianteActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.auth.WaitingApprovalActivity"
             android:exported="false" />

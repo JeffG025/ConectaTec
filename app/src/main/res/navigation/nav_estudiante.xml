@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_estudiante"
+    app:startDestination="@id/estudianteDashboardFragment">
+
+    <!-- ───────────── Destinos raíz (tabs de la pill nav) ───────────── -->
+
+    <!-- 0 · Dashboard -->
+    <fragment
+        android:id="@+id/estudianteDashboardFragment"
+        android:name="com.conectatec.ui.estudiante.dashboard.EstudianteDashboardFragment"
+        android:label="@string/title_estudiante_dashboard" />
+
+    <!-- 1 · Grupos -->
+    <fragment
+        android:id="@+id/estudianteGruposFragment"
+        android:name="com.conectatec.ui.estudiante.grupos.EstudianteGruposFragment"
+        android:label="@string/title_estudiante_grupos">
+        <action
+            android:id="@+id/action_estudiante_grupos_to_detalle"
+            app:destination="@id/estudianteGrupoDetalleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_estudiante_grupos_to_unirse"
+            app:destination="@id/estudianteUnirseGrupoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- 2 · Tareas -->
+    <fragment
+        android:id="@+id/estudianteTareasFragment"
+        android:name="com.conectatec.ui.estudiante.tareas.EstudianteTareasFragment"
+        android:label="@string/title_estudiante_tareas">
+        <action
+            android:id="@+id/action_estudiante_tareas_to_detalle"
+            app:destination="@id/estudianteTareaDetalleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- 3 · Chat -->
+    <fragment
+        android:id="@+id/estudianteChatFragment"
+        android:name="com.conectatec.ui.estudiante.chat.EstudianteChatFragment"
+        android:label="@string/title_estudiante_chat">
+        <action
+            android:id="@+id/action_estudiante_chat_to_conversacion"
+            app:destination="@id/estudianteConversacionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- 4 · Perfil -->
+    <fragment
+        android:id="@+id/estudiantePerfilFragment"
+        android:name="com.conectatec.ui.estudiante.perfil.EstudiantePerfilFragment"
+        android:label="@string/title_estudiante_perfil">
+        <action
+            android:id="@+id/action_estudiante_perfil_to_ajustes"
+            app:destination="@id/ajustesFragment" />
+    </fragment>
+
+    <!-- Ajustes (compartido) -->
+    <fragment
+        android:id="@+id/ajustesFragment"
+        android:name="com.conectatec.ui.common.ajustes.AjustesFragment"
+        android:label="Ajustes" />
+
+    <!-- ───────────── Sub-destinos: Grupos ───────────── -->
+    <fragment
+        android:id="@+id/estudianteGrupoDetalleFragment"
+        android:name="com.conectatec.ui.estudiante.grupos.EstudianteGrupoDetalleFragment"
+        android:label="Detalle del grupo">
+        <argument
+            android:name="grupoId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_estudiante_grupo_detalle_to_tarea_detalle"
+            app:destination="@id/estudianteTareaDetalleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estudianteUnirseGrupoFragment"
+        android:name="com.conectatec.ui.estudiante.grupos.EstudianteUnirseGrupoFragment"
+        android:label="Unirse a un grupo">
+        <action
+            android:id="@+id/action_estudiante_unirse_to_escanear_qr"
+            app:destination="@id/estudianteEscanearQrFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estudianteEscanearQrFragment"
+        android:name="com.conectatec.ui.estudiante.grupos.EstudianteEscanearQrFragment"
+        android:label="Escanear QR" />
+
+    <!-- ───────────── Sub-destinos: Tareas ───────────── -->
+    <fragment
+        android:id="@+id/estudianteTareaDetalleFragment"
+        android:name="com.conectatec.ui.estudiante.tareas.EstudianteTareaDetalleFragment"
+        android:label="Detalle de tarea">
+        <argument
+            android:name="tareaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_estudiante_tarea_detalle_to_entregar"
+            app:destination="@id/estudianteEntregarTareaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estudianteEntregarTareaFragment"
+        android:name="com.conectatec.ui.estudiante.tareas.EstudianteEntregarTareaFragment"
+        android:label="Entregar tarea">
+        <argument
+            android:name="tareaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <!-- ───────────── Sub-destinos: Chat ───────────── -->
+    <fragment
+        android:id="@+id/estudianteConversacionFragment"
+        android:name="com.conectatec.ui.estudiante.chat.EstudianteConversacionFragment"
+        android:label="Conversación">
+        <argument
+            android:name="salaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="nombreSala"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+</navigation>

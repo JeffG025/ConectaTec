@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.conectatec"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.conectatec"
@@ -42,6 +40,13 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig  = true
+    }
+}
+
+// Forzar javapoet 1.13.0 para evitar conflictos entre Hilt y Glide compilers
+configurations.all {
+    resolutionStrategy {
+        force("com.squareup:javapoet:1.13.0")
     }
 }
 
