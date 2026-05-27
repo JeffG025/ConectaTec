@@ -14,6 +14,7 @@ import androidx.navigation.Navigation;
 import com.conectatec.R;
 import com.conectatec.databinding.FragmentEstudiantePerfilBinding;
 import com.conectatec.ui.auth.LoginActivity;
+import com.conectatec.ui.common.EntradaAnimator;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -34,17 +35,34 @@ public class EstudiantePerfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setupListeners();
+        EntradaAnimator.animar(
+                binding.cardHeroPerfilEstudiante,
+                binding.cardInfoAcademicaEstudiante,
+                binding.cardConfigEstudiante,
+                binding.btnCerrarSesionEstudiante
+        );
+    }
 
-        binding.rowAjustesEstudiante.setOnClickListener(v ->
-                Navigation.findNavController(v)
+    private void setupListeners() {
+        binding.rowNotificacionesEstudiante.setOnClickListener(v -> { /* placeholder */ });
+
+        binding.rowTemaEstudiante.setOnClickListener(v ->
+                Navigation.findNavController(requireView())
                         .navigate(R.id.action_estudiante_perfil_to_ajustes));
 
-        binding.btnCerrarSesionEstudiante.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            requireActivity().finish();
-        });
+        binding.rowIdiomaEstudiante.setOnClickListener(v -> { /* placeholder */ });
+
+        binding.btnCerrarSesionEstudiante.setOnClickListener(v -> cerrarSesion());
+    }
+
+    private void cerrarSesion() {
+        // TODO: llamar a SessionService.cerrarSesion()
+        Intent intent = new Intent(requireActivity(), LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        requireActivity().overridePendingTransition(
+                android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     @Override
